@@ -7,6 +7,9 @@ body {
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 }
+*:focus {
+  outline: none;
+}
 @import 'listings';
 @import 'content-area';
 

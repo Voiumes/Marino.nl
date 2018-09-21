@@ -1,57 +1,28 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Slider from 'react-rangeslider';
-
-
-
-
 
 export default class Listings extends Component {
-    constructor (props, context) {
+    constructor(props, context) {
         super(props, context)
         this.state = {
-          value: 10
         }
     }
-    handleChangeStart = () => {
-        console.log('Change event started')
-    };
 
-    handleChange = value => {
-        this.setState({
-            value: value
-        })
-    };
-
-    handleChangeComplete = () => {
-        console.log('Change event completed')
-    };
 
     render() {
         const { value } = this.state
         return (
             <section id='listings'>
 
-                <Slider
-                    min={0}
-                    max={1000}
-                    min={500}
-                    max={1000}
-                    value={value}
-                    onChangeStart={this.handleChangeStart}
-                    onChange={this.handleChange}
-                    onChangeComplete={this.handleChangeComplete}
-                />
-
-
 
                 <section id='search-area'>
-                    <input type='text' name='search' />
+                    <input type='text' name='search' placeholder='Search' />
+
                 </section>
                 <section id='sort-by'>
-                    <div>23 results found</div>
-                    <div className='sort-options'>
-                        <select>
+                    <div className='results'>23 results found
+
+                        <select className='result-order'>
                             <option value='date-des'>
                                 Date descending
                             </option>
@@ -65,63 +36,103 @@ export default class Listings extends Component {
                                 Price ascending
                             </option>
                         </select>
-                    </div>
-                    <div className='view'>
-                        <div>
-                            <FontAwesomeIcon icon="list" />
-                        </div>
-                        <div>
-                            <FontAwesomeIcon icon="th" />
+                        <div className='view'>
+                            <span className='list-icon'><FontAwesomeIcon icon="list" /></span><span className='grid-icon'><FontAwesomeIcon icon="th" /></span>
                         </div>
                     </div>
+
                 </section>
+
                 <section id='listings-results'>
-                    <div className='listing'>
-                        <div className='listing-img'>
-                            <div className='user-img'>
+                    <div className='listing-grid'>
+                        <div className='listing'>
+                            <div className='listing-img'>
+                                <span className='address'>Lucky Landing</span>
+                                <div className='details'>
+                                    <div className='user-img'>
+                                    </div>
+                                    <div className='user-details'>
+                                        <div className='user-name'>Meryl Watson</div>
+                                        <div className='post-date'>Posted on 5/3/2018</div>
+                                    </div>
+                                    <div className='listing-details'>
+                                        <div className='listing-floor-area'>
+                                            <div> <FontAwesomeIcon icon="chart-area" /> 305m²</div>
+                                        </div>
+                                        <div className='furnished'>
+                                            <div> <FontAwesomeIcon icon="couch" /> unfurnished</div>
+                                        </div>
+                                        <div className='bedroom-count'>
+                                            <div> <FontAwesomeIcon icon="bed" /> 3 bedrooms <a className='view-map' href='#'>view map</a></div>
+                                        </div>
+
+                                    </div>
+                                </div>
 
                             </div>
-                            <div className='user-details'>
-                                <span className='user-name'>Poggers Champh</span>
-                                <span className='post-date'>Posted on</span>
-                            </div>
-                            <div className='listing-details'>
-                                <div className='listing-floor-area'>
-                                    <div> <FontAwesomeIcon icon="chart-area" />254m²</div>
-                                </div>
-                                <div className='furnished'>
-                                    <div> <FontAwesomeIcon icon="couch" />unfurnished</div>
-                                </div>
-                                <div className='bedroom-count'>
-                                    <div> <FontAwesomeIcon icon="bed" />7 bedrooms</div>
-                                </div>
-                                <div className='view-map'>
-                                    <div><a href='#'>view map</a></div>
-                                </div>
+                            <div className='bottom-info'>
+                                <div className='listing-price'>$1550/month (ex.)</div>
+                                <div className='listing-location'><FontAwesomeIcon icon="map-marker-alt" /> Location: Rotterdam</div>
                             </div>
                         </div>
-                        <div className='bottom-info'>
-                            <span>$1350/mo</span>
-                            <span><FontAwesomeIcon icon="map-marker-alt" /> Location: Orlando Fl</span>
+                        <div className='listing'>
+                            <div className='listing-img'>
+                                <span className='address'>Lucky Landing</span>
+                                <div className='details'>
+                                    <div className='user-img'>
+                                    </div>
+                                    <div className='user-details'>
+                                        <div className='user-name'>Meryl Watson</div>
+                                        <div className='post-date'>Posted on 5/3/2018</div>
+                                    </div>
+                                    <div className='listing-details'>
+                                        <div className='listing-floor-area'>
+                                            <div> <FontAwesomeIcon icon="chart-area" /> 305m²</div>
+                                        </div>
+                                        <div className='furnished'>
+                                            <div> <FontAwesomeIcon icon="couch" /> unfurnished</div>
+                                        </div>
+                                        <div className='bedroom-count'>
+                                            <div> <FontAwesomeIcon icon="bed" /> 3 bedrooms <a className='view-map' href='#'>view map</a></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div className='bottom-info'>
+                                <div className='listing-price'>$1550/month (ex.)</div>
+                                <div className='listing-location'><FontAwesomeIcon icon="map-marker-alt" /> Location: Rotterdam</div>
+                            </div>
                         </div>
+
                     </div>
+
+
+
                 </section>
                 <section id='pagination'>
-                    <ul className='pagination-nums'>
-                        <li>
+                    <ul className='pages'>
+                        <li className='previous'>
+                            prev
+                        </li>
+                        <li className='active'>
                             1
                         </li>
                         <li>
-                            1
+                            2
                         </li>
                         <li>
-                            1
+                            3
                         </li>
                         <li>
-                            1
+                            4
                         </li>
                         <li>
-                            1
+                            5
+                        </li>
+                        <li className='next'>
+                            next
                         </li>
                     </ul>
                 </section>

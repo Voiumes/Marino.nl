@@ -70,7 +70,7 @@ export default class Filter extends Component {
                         <input type='text' name='max-price' className='max-price' placeholder='150 ft²' />
                     </div>
                     <h3>Facilities</h3>
-                    <div class-name='filters facilities'>
+                    <div className='filters facilities'>
                         <label><span>Elevators </span><input name="facilities" value="elevator" type="checkbox" /></label>
                         <label><span>Storage </span><input name="facilities" value='storage' type="checkbox" /></label>
                         <label><span>Bath tub</span> <input name="facilities" value='bath-tub' type="checkbox" /></label>

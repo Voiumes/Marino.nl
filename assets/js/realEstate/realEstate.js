@@ -5,7 +5,7 @@ import Filter from './Filter.js';
 import Listings from './Listings.js';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faList, faTh, faChartArea, faCouch, faBed, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import Slider from 'react-rangeslider';
+import listingData from './listingData/listingData.js';
 
 
 
@@ -17,11 +17,12 @@ class App extends Component {
     constructor() {
         super()
         this.state = {
-
+            listingData
         }
     }
 
     render() {
+        console.log(this.state.listingData)
         return (
             <div>
                 <Header />

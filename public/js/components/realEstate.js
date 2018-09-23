@@ -289,26 +289,16 @@ var Listings = function (_Component) {
                         ),
                         _react2.default.createElement(
                             'select',
-                            { className: 'result-order' },
+                            { className: 'result-order', name: 'sortby', onChange: this.props.change },
                             _react2.default.createElement(
                                 'option',
-                                { value: 'date-des' },
-                                'Date descending'
+                                { value: 'price_asc' },
+                                'Lowest price'
                             ),
                             _react2.default.createElement(
                                 'option',
-                                { value: 'date-asc' },
-                                'Date ascending'
-                            ),
-                            _react2.default.createElement(
-                                'option',
-                                { value: 'price-des' },
-                                'Price dscending'
-                            ),
-                            _react2.default.createElement(
-                                'option',
-                                { value: 'date-asc' },
-                                'Price ascending'
+                                { value: 'price_dsc' },
+                                'Highest price'
                             )
                         ),
                         _react2.default.createElement(
@@ -583,7 +573,8 @@ var App = function (_Component) {
             fireplace: false,
             swimming_pool: false,
             filteredData: _listingData2.default,
-            populateFormsData: ''
+            populateFormsData: '',
+            sortby: 'price_dsc'
         }, _this.change = _this.change.bind(_this);
         _this.filteredData = _this.filteredData.bind(_this);
         _this.populateForms = _this.populateForms.bind(_this);
@@ -620,6 +611,16 @@ var App = function (_Component) {
                     return item.houseType == _this3.state.houseType;
                 });
             }
+            if (this.state.sortby === 'price_asc') {
+                newData = newData.sort(function (a, b) {
+                    return a.price - b.price;
+                });
+            }
+            if (this.state.sortby === 'price_dsc') {
+                newData = newData.sort(function (a, b) {
+                    return b.price - a.price;
+                });
+            }
             this.setState({
                 filteredData: newData
             });
@@ -627,26 +628,27 @@ var App = function (_Component) {
     }, {
         key: 'populateForms',
         value: function populateForms() {
-            var _this4 = this;
-
             //location
             var locations = this.state.listingData.map(function (item) {
                 return item.location;
             });
             locations = new Set(locations);
             locations = [].concat(_toConsumableArray(locations));
+            locations = locations.sort();
             //houseType
             var houseTypes = this.state.listingData.map(function (item) {
-                return item.houseTypes;
+                return item.houseType;
             });
             houseTypes = new Set(houseTypes);
             houseTypes = [].concat(_toConsumableArray(houseTypes));
+            houseTypes = houseTypes.sort();
             //bedrooms
             var bedrooms = this.state.listingData.map(function (item) {
                 return item.bedrooms;
             });
             bedrooms = new Set(bedrooms);
             bedrooms = [].concat(_toConsumableArray(bedrooms));
+            bedrooms = bedrooms.sort();
             this.setState({
                 populateFormsData: {
                     locations: locations,
@@ -654,7 +656,15 @@ var App = function (_Component) {
                     bedrooms: bedrooms
                 }
             }, function () {
-                console.log(_this4.state);
+                console.log();
+            } //this.state)
+            );
+        }
+    }, {
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            var listingData = this.state.listingData.sort(function (a, b) {
+                return a.price - b.price;
             });
         }
     }, {
@@ -668,7 +678,7 @@ var App = function (_Component) {
                     'section',
                     { id: 'content-area' },
                     _react2.default.createElement(_Filter2.default, { change: this.change, globalState: this.state, populateAction: this.populateForms }),
-                    _react2.default.createElement(_Listings2.default, { listingData: this.state.filteredData })
+                    _react2.default.createElement(_Listings2.default, { listingData: this.state.filteredData, change: this.change })
                 )
             );
         }
@@ -716,7 +726,9 @@ var Filter = function (_Component) {
                 var _this = _possibleConstructorReturn(this, (Filter.__proto__ || Object.getPrototypeOf(Filter)).call(this));
 
                 _this.state = {};
-                // this.locations = this.locations.bind(this)
+                _this.locations = _this.locations.bind(_this);
+                _this.houseTypes = _this.houseTypes.bind(_this);
+                _this.bedrooms = _this.bedrooms.bind(_this);
                 return _this;
         }
 
@@ -725,24 +737,52 @@ var Filter = function (_Component) {
                 value: function componentWillMount() {
                         this.props.populateAction();
                 }
-                //     locations(){
-                //         let locations = this.props.globalState.populateFormsData
-                //         console.log(locations)
-                //                 // return locations.map((item)=>{
-                //                 // return(
-                //                 //         <option value='{item}'>
-                //                 //                 {item}
-                //                 //         </option>
-                //                 // )
-                //         // })
-                //     }
-                //     homeTypes(){
-
-                //     }
-                //     bedrooms(){
-
-                //     }
-
+        }, {
+                key: 'locations',
+                value: function locations() {
+                        var locations = this.props.globalState.populateFormsData.locations;
+                        if (locations != undefined) {
+                                // console.log(locations)
+                                return locations.map(function (item) {
+                                        return _react2.default.createElement(
+                                                'option',
+                                                { value: item, key: item },
+                                                item
+                                        );
+                                });
+                        }
+                }
+        }, {
+                key: 'houseTypes',
+                value: function houseTypes() {
+                        var houseTypes = this.props.globalState.populateFormsData.houseTypes;
+                        if (houseTypes != undefined) {
+                                // console.log(houseTypes)
+                                return houseTypes.map(function (item) {
+                                        return _react2.default.createElement(
+                                                'option',
+                                                { value: item, key: item },
+                                                item
+                                        );
+                                });
+                        }
+                }
+        }, {
+                key: 'bedrooms',
+                value: function bedrooms() {
+                        var bedrooms = this.props.globalState.populateFormsData.bedrooms;
+                        if (bedrooms != undefined) {
+                                // console.log(bedrooms)
+                                return bedrooms.map(function (item) {
+                                        return _react2.default.createElement(
+                                                'option',
+                                                { value: item, key: item },
+                                                item,
+                                                '+'
+                                        );
+                                });
+                        }
+                }
         }, {
                 key: 'render',
                 value: function render() {
@@ -764,7 +804,8 @@ var Filter = function (_Component) {
                                                         'option',
                                                         { value: 'All' },
                                                         'All Locations'
-                                                )
+                                                ),
+                                                this.locations()
                                         ),
                                         _react2.default.createElement(
                                                 'select',
@@ -774,21 +815,7 @@ var Filter = function (_Component) {
                                                         { value: 'All' },
                                                         'Housing Type'
                                                 ),
-                                                _react2.default.createElement(
-                                                        'option',
-                                                        { value: 'apartment' },
-                                                        'Apartment'
-                                                ),
-                                                _react2.default.createElement(
-                                                        'option',
-                                                        { value: 'condo' },
-                                                        'Condo'
-                                                ),
-                                                _react2.default.createElement(
-                                                        'option',
-                                                        { value: 'house' },
-                                                        'House'
-                                                )
+                                                this.houseTypes()
                                         ),
                                         _react2.default.createElement(
                                                 'select',
@@ -798,21 +825,7 @@ var Filter = function (_Component) {
                                                         { value: '0' },
                                                         'Rooms'
                                                 ),
-                                                _react2.default.createElement(
-                                                        'option',
-                                                        { value: '1' },
-                                                        '1+'
-                                                ),
-                                                _react2.default.createElement(
-                                                        'option',
-                                                        { value: '2' },
-                                                        '2+'
-                                                ),
-                                                _react2.default.createElement(
-                                                        'option',
-                                                        { value: '3' },
-                                                        '3+'
-                                                )
+                                                this.bedrooms()
                                         ),
                                         _react2.default.createElement(
                                                 'div',

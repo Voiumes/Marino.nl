@@ -73,18 +73,12 @@ export default class Listings extends Component {
                 <section id='sort-by'>
                     <div className='results'>
                     <span>{this.listingLength().length} result(s) found</span>
-                        <select className='result-order'>
-                            <option value='date-des'>
-                                Date descending
+                        <select className='result-order' name='sortby' onChange={this.props.change}>
+                            <option value='price_asc'>
+                                Lowest price
                             </option>
-                            <option value='date-asc'>
-                                Date ascending
-                            </option>
-                            <option value='price-des'>
-                                Price dscending
-                            </option>
-                            <option value='date-asc'>
-                                Price ascending
+                            <option value='price_dsc'>
+                                Highest price
                             </option>
                         </select>
                         <div className='view'>

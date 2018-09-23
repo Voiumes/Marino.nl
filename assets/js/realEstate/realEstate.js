@@ -28,7 +28,8 @@ class App extends Component {
             fireplace:false,
             swimming_pool:false,
             filteredData: listingData,
-            populateFormsData:''
+            populateFormsData:'',
+            sortby:'price_dsc'
         },
             this.change = this.change.bind(this)
             this.filteredData = this.filteredData.bind(this)
@@ -62,8 +63,16 @@ class App extends Component {
             newData = newData.filter((item)=>{
                 return item.houseType == this.state.houseType
             })
-            
-
+        }
+        if(this.state.sortby === 'price_asc'){
+            newData = newData.sort((a, b)=>{
+                return a.price - b.price
+            })
+        }
+        if(this.state.sortby === 'price_dsc'){
+            newData = newData.sort((a, b)=>{
+                return b.price - a.price
+            })
         }
         this.setState({
             filteredData: newData
@@ -78,18 +87,21 @@ class App extends Component {
         })
         locations = new Set(locations)
         locations = [...locations]
+        locations = locations.sort()
         //houseType
         let houseTypes = this.state.listingData.map((item)=>{
-            return item.houseTypes
+            return item.houseType
         })
         houseTypes = new Set(houseTypes)
         houseTypes =[...houseTypes]
+        houseTypes = houseTypes.sort()
         //bedrooms
         let bedrooms = this.state.listingData.map((item)=>{
             return item.bedrooms
         })
         bedrooms = new Set(bedrooms)
         bedrooms = [...bedrooms]
+        bedrooms = bedrooms.sort()
         this.setState({
             populateFormsData:{
                 locations,
@@ -97,10 +109,15 @@ class App extends Component {
                 bedrooms
             }   
         }, ()=>{
-            console.log(this.state)
+            console.log(//this.state)
+            )
         })
     }
-   
+   componentWillMount(){
+       let listingData = this.state.listingData.sort((a, b)=>{
+            return a.price - b.price
+       })
+   }
 
 
 
@@ -111,7 +128,7 @@ class App extends Component {
                 <Header />
                 <section id='content-area'>
                     <Filter change={this.change} globalState={this.state} populateAction={this.populateForms}/>
-                    <Listings listingData={this.state.filteredData} />
+                    <Listings listingData={this.state.filteredData} change={this.change} />
 
                 </section>
             </div>

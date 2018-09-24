@@ -35,3 +35,8 @@ header{
 .container{
     margin: auto 200px;
 }
+
+.filterListingGrid{
+    display: grid;
+    grid-template-columns: 28% 72%;
+}

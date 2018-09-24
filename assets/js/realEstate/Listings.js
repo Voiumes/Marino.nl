@@ -81,9 +81,9 @@ export default class Listings extends Component {
                                 Highest price
                             </option>
                         </select>
-                        <div className='view'>
+                        {/* <div className='view'>
                             <span className='list-icon'><FontAwesomeIcon icon="list" /></span><span className='grid-icon'><FontAwesomeIcon icon="th" /></span>
-                        </div>
+                        </div> */}
                     </div>
 
                 </section>

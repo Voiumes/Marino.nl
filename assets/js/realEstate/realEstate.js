@@ -5,9 +5,9 @@ import Filter from './Filter.js';
 import Listings from './Listings.js';
 import Footer from './Footer.js';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faList, faTh, faChartArea, faCouch, faBed, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faList, faTh, faChartArea, faCouch, faBed, faMapMarkerAlt, faAppleAlt, faPlay } from '@fortawesome/free-solid-svg-icons';
 import listingData from './listingData/listingData.js';
-library.add(faTh, faChartArea, faList, faCouch, faBed, faMapMarkerAlt)
+library.add(faTh, faChartArea, faList, faCouch, faBed, faMapMarkerAlt, faAppleAlt, faPlay  )
 
 
 class App extends Component {
@@ -127,12 +127,13 @@ class App extends Component {
         return (
             <div>
                 <Header />
-                <section id='content-area'>
-                    <Filter change={this.change} globalState={this.state} populateAction={this.populateForms}/>
-                    <Listings listingData={this.state.filteredData} change={this.change} />
+                    <div className='filterListingGrid'>
+                        <div><Filter change={this.change} globalState={this.state} populateAction={this.populateForms}/></div>
+                        <div><Listings listingData={this.state.filteredData} change={this.change} /></div>
+                        
+                    </div>
+                    
                     <Footer />
-
-                </section>
             </div>
         )
     }

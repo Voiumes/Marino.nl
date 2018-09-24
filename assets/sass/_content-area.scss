@@ -1,17 +1,26 @@
 #filter{
     margin-top:80px;
     background: $grey;
-    width: 450px;
+    width: 100%;
     display: block;
     float: left;
     padding-bottom: 40px;
+    @media only screen and (max-width: 1280px){
+    margin-top:80px;
+    background: $grey;
+    width: 100%;
+    display: block;
+    float: left;
+    padding-bottom: 200px;
+    }
+    
     h4{
         color:rgb(65, 65, 65);
         font-weight: bolder;
         font-size: .9rem;
         margin-top: 25px;
         margin-bottom: 35px;
-        margin-left: 160px;
+        margin-left: 50%;
     }
     .filter-container{
         padding: 20px;
@@ -27,12 +36,12 @@
         color:rgb(139, 139, 139);
         display: block;
         margin: 40px 0;
-        margin-left: 150px;
+        margin-left: 40%;
         width:56%;
     }  
 }
 .price{
-    margin-left:150px;
+    margin-left:40%;
     margin-top:70px;
     font-size: .9rem;
     color: rgb(126, 126, 126);
@@ -43,7 +52,7 @@
     }
 }
 .floor-space{
-    margin-left:150px;
+    margin-left:40%;
     font-size: .9rem;
     color: rgb(126, 126, 126);
     span{
@@ -59,6 +68,15 @@ input[type='text']{
     border-radius: 1px;
     padding: 3px;
 }
+@media only screen and (max-width: 1385px){
+    input[type='text']{
+        width: 80%;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        border-radius: 1px;
+        padding: 3px;
+    }
+}
 h3{
     color: rgb(150, 150, 150);
     font-size: 14px;
@@ -69,7 +87,7 @@ h3{
 label{
     display: block;
     font-size: 0.9rem;
-    margin-left: 150px;
+    margin-left: 40%;
     margin-top: 20px;
     margin-bottom: 20px;
     padding-bottom: 20px;
@@ -335,19 +353,18 @@ input[type='checkbox']{
 #footer{
     clear:both;
     background-color: $darkpurple;
-    height: 400px;
+    height: 380px;
     .footerGrid{
         display:grid;
         grid-template-columns: 1fr 1fr 1fr;
         .footerPicture{
             position: relative;
-            height: 400px;
+            height: 380px;
             .phone{
                 position: absolute;
                 bottom:0;
                 right: 40px;
                 width: 300px;
-                height: auto;
                 background-image: url(https://images.unsplash.com/photo-1537691321166-d766dfd693d9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ee03913ae00f830eb1c0accd44bb2550&auto=format&fit=crop&w=634&q=80);
                 z-index: 1;
 
@@ -364,12 +381,71 @@ input[type='checkbox']{
             
         }
         .footerSocialMedia{
-            height: 400px;
+            height: 380px;
             color:white;
+            position: relative;
+            padding-left:40px;
+            h1{
+                margin-top: 40px;
+                margin-bottom: 20px;
+                font-size: 1.8rem;
+            }
+            p{
+                color:rgb(206, 206, 206);
+                margin-top:8px;
+            }
+            button{
+                color:white;
+                background: linear-gradient(to bottom, rgb(255, 112, 140) 0%, rgba(255, 112, 248, 0.623) 100%);
+                border:none;
+                margin-right: 20px;
+                margin-top: 25px;
+                margin-bottom: 30px;
+                padding: 12px 20px;
+                border-radius: 5px;
+                a{
+                    color:white;
+                    text-decoration: none;
+                    font-size: 1.2rem;
+                }
+            }
+            .socialMedia{
+                img{
+                    height: 50px;
+                    margin-right: 10px;
+                   
+                }
+                
 
+            }
+            .dates{
+                position: absolute;
+                bottom: 3px;
+                z-index: 1;
+                font-weight: 200;
+                font-size: .9rem;
+            }
         }
-        .footerLinks{
-            height: 400px;
+        .footerLinksGrid{
+            display: grid;
+            grid-template-columns: 30% 1fr;
+            color:white;
+            padding-top:40px;
+                a{
+                    color:rgba(121, 121, 121, 0.808);
+                    text-decoration: none;
+                    &:hover{
+                        color:$pink;
+                    }
+                }
+                ul{
+                    margin-top:20px;
+                }
+                li{
+                    line-height: 1.2rem;
+                }
+
+                
 
         }
     }

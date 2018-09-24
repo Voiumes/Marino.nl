@@ -13,7 +13,7 @@ let listingData = [
             'swimming pool',
             'elevator'
         ],
-        image: 'https://i.ytimg.com/vi/RT8mZ6y5vsg/maxresdefault.jpg'
+        image: 'https://images.unsplash.com/photo-1416331108676-a22ccb276e35?ixlib=rb-0.3.5&s=60b1e3b607cdfd40296bc68f7d9ac137&auto=format&fit=crop&w=1347&q=80'
 
     },
     {
@@ -30,7 +30,7 @@ let listingData = [
             'swimming pool',
             'elevator'
         ],
-        image: 'https://files.gamebanana.com/img/ss/maps/530-90_57f0d41ad0a88.jpg'
+        image: 'https://images.unsplash.com/photo-1494526585095-c41746248156?ixlib=rb-0.3.5&s=0a4231a60ebc44ba7b023b89f1c13f5f&auto=format&fit=crop&w=1350&q=80'
 
     },
     {
@@ -47,43 +47,10 @@ let listingData = [
             'swimming pool',
             'elevator'
         ],
-        image: 'http://farm5.static.flickr.com/4081/4936699491_54f68e5725.jpg'
+        image: 'https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-0.3.5&s=2e11b3ea0c3fad79a8b085c6dea75de4&auto=format&fit=crop&w=1350&q=80'
 
     },
-    {
-        user: 'Colonel Cambel',
-        postDate: '5/6/2018',
-        name: 'Groznyj Grad',
-        area: 1100,
-        furnished: 'furnished',
-        bedrooms: 1,
-        price: 3000,
-        location: 'New York',
-        houseType: 'house',
-        facilities: [
-            'swimming pool',
-            'elevator'
-        ],
-        image: 'https://media.equityapartments.com/images/c_crop,x_0,y_0,w_1920,h_1080/c_fill,w_1920,h_1080/q_80/3639-12/mosaic-at-metro-apartments-swimming-pool.jpg   '
-
-    },
-    {
-        user: 'Revolver Ocelot',
-        postDate: '5/6/2018',
-        name: 'Arsenal Gear',
-        area: 351,
-        furnished: 'furnished',
-        bedrooms: 3,
-        price: 1450,
-        location: 'Minnesota',
-        houseType: 'apartment',
-        facilities: [
-            'swimming pool',
-            'elevator'
-        ],
-        image: 'https://i.ytimg.com/vi/RT8mZ6y5vsg/maxresdefault.jpg'
-
-    },
+  
     {
         user: 'Meryl Silverburgh',
         postDate: '5/6/2018',
@@ -98,7 +65,7 @@ let listingData = [
             'swimming pool',
             'elevator'
         ],
-        image: 'https://files.gamebanana.com/img/ss/maps/530-90_57f0d41ad0a88.jpg'
+        image: 'https://images.unsplash.com/photo-1533667586627-9f5ddbd42539?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bb707c0b87345277ebc415156111fb69&auto=format&fit=crop&w=1350&q=80'
 
     },
     {
@@ -115,7 +82,7 @@ let listingData = [
             'swimming pool',
             'elevator'
         ],
-        image: 'http://farm5.static.flickr.com/4081/4936699491_54f68e5725.jpg'
+        image: 'https://images.unsplash.com/photo-1432303492674-642e9d0944b2?ixlib=rb-0.3.5&s=db5e99333c2d621fb759725001026781&auto=format&fit=crop&w=1353&q=80'
 
     },
     {
@@ -132,7 +99,7 @@ let listingData = [
             'swimming pool',
             'elevator'
         ],
-        image: 'https://media.equityapartments.com/images/c_crop,x_0,y_0,w_1920,h_1080/c_fill,w_1920,h_1080/q_80/3639-12/mosaic-at-metro-apartments-swimming-pool.jpg'
+        image: 'https://images.unsplash.com/photo-1523217582562-09d0def993a6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c7adacd8460808aaa0168f7cd060ec23&auto=format&fit=crop&w=800&q=80'
 
     }
 

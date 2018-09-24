@@ -12,7 +12,84 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(14);
+var _react = __webpack_require__(13);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Header = function (_Component) {
+    _inherits(Header, _Component);
+
+    function Header() {
+        _classCallCheck(this, Header);
+
+        var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this));
+
+        _this.state = {};
+        return _this;
+    }
+
+    _createClass(Header, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'section',
+                { id: 'footer' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'footerGrid' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'footerPicture' },
+                        _react2.default.createElement('img', { className: 'phone', src: 'https://i.gyazo.com/39d9f76f7896d311925bb5f82fc115c0.png' }),
+                        _react2.default.createElement(
+                            'p',
+                            null,
+                            'Marino.nl'
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'footerSocialMedia' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'download' },
+                            'Download Marino App'
+                        )
+                    ),
+                    _react2.default.createElement('div', { className: 'footerLinks' })
+                )
+            );
+        }
+    }]);
+
+    return Header;
+}(_react.Component);
+
+exports.default = Header;
+
+/***/ }),
+
+/***/ 101:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(13);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -98,7 +175,7 @@ exports.default = Header;
 
 /***/ }),
 
-/***/ 101:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -110,11 +187,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(14);
+var _react = __webpack_require__(13);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactFontawesome = __webpack_require__(104);
+var _reactFontawesome = __webpack_require__(105);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -380,7 +457,7 @@ exports.default = Listings;
 
 /***/ }),
 
-/***/ 102:
+/***/ 103:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -400,7 +477,7 @@ var listingData = [{
     location: 'Minnesota',
     houseType: 'apartment',
     facilities: ['swimming pool', 'elevator'],
-    image: 'https://i.ytimg.com/vi/RT8mZ6y5vsg/maxresdefault.jpg'
+    image: 'https://images.unsplash.com/photo-1416331108676-a22ccb276e35?ixlib=rb-0.3.5&s=60b1e3b607cdfd40296bc68f7d9ac137&auto=format&fit=crop&w=1347&q=80'
 
 }, {
     user: 'Meryl Silverburgh',
@@ -413,7 +490,7 @@ var listingData = [{
     location: 'Rotterdam',
     houseType: 'condo',
     facilities: ['swimming pool', 'elevator'],
-    image: 'https://files.gamebanana.com/img/ss/maps/530-90_57f0d41ad0a88.jpg'
+    image: 'https://images.unsplash.com/photo-1494526585095-c41746248156?ixlib=rb-0.3.5&s=0a4231a60ebc44ba7b023b89f1c13f5f&auto=format&fit=crop&w=1350&q=80'
 
 }, {
     user: 'Solid Snake',
@@ -426,33 +503,7 @@ var listingData = [{
     location: 'Florida',
     houseType: 'apartment',
     facilities: ['swimming pool', 'elevator'],
-    image: 'http://farm5.static.flickr.com/4081/4936699491_54f68e5725.jpg'
-
-}, {
-    user: 'Colonel Cambel',
-    postDate: '5/6/2018',
-    name: 'Groznyj Grad',
-    area: 1100,
-    furnished: 'furnished',
-    bedrooms: 1,
-    price: 3000,
-    location: 'New York',
-    houseType: 'house',
-    facilities: ['swimming pool', 'elevator'],
-    image: 'https://media.equityapartments.com/images/c_crop,x_0,y_0,w_1920,h_1080/c_fill,w_1920,h_1080/q_80/3639-12/mosaic-at-metro-apartments-swimming-pool.jpg   '
-
-}, {
-    user: 'Revolver Ocelot',
-    postDate: '5/6/2018',
-    name: 'Arsenal Gear',
-    area: 351,
-    furnished: 'furnished',
-    bedrooms: 3,
-    price: 1450,
-    location: 'Minnesota',
-    houseType: 'apartment',
-    facilities: ['swimming pool', 'elevator'],
-    image: 'https://i.ytimg.com/vi/RT8mZ6y5vsg/maxresdefault.jpg'
+    image: 'https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-0.3.5&s=2e11b3ea0c3fad79a8b085c6dea75de4&auto=format&fit=crop&w=1350&q=80'
 
 }, {
     user: 'Meryl Silverburgh',
@@ -465,7 +516,7 @@ var listingData = [{
     location: 'Rotterdam',
     houseType: 'apartment',
     facilities: ['swimming pool', 'elevator'],
-    image: 'https://files.gamebanana.com/img/ss/maps/530-90_57f0d41ad0a88.jpg'
+    image: 'https://images.unsplash.com/photo-1533667586627-9f5ddbd42539?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bb707c0b87345277ebc415156111fb69&auto=format&fit=crop&w=1350&q=80'
 
 }, {
     user: 'Solid Snake',
@@ -478,7 +529,7 @@ var listingData = [{
     location: 'Rotterdam',
     houseType: 'apartment',
     facilities: ['swimming pool', 'elevator'],
-    image: 'http://farm5.static.flickr.com/4081/4936699491_54f68e5725.jpg'
+    image: 'https://images.unsplash.com/photo-1432303492674-642e9d0944b2?ixlib=rb-0.3.5&s=db5e99333c2d621fb759725001026781&auto=format&fit=crop&w=1353&q=80'
 
 }, {
     user: 'Colonel Cambel',
@@ -491,7 +542,7 @@ var listingData = [{
     location: 'Florida',
     houseType: 'apartment',
     facilities: ['swimming pool', 'elevator'],
-    image: 'https://media.equityapartments.com/images/c_crop,x_0,y_0,w_1920,h_1080/c_fill,w_1920,h_1080/q_80/3639-12/mosaic-at-metro-apartments-swimming-pool.jpg'
+    image: 'https://images.unsplash.com/photo-1523217582562-09d0def993a6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c7adacd8460808aaa0168f7cd060ec23&auto=format&fit=crop&w=800&q=80'
 
 }];
 
@@ -499,7 +550,7 @@ exports.default = listingData;
 
 /***/ }),
 
-/***/ 105:
+/***/ 106:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -507,7 +558,7 @@ exports.default = listingData;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(14);
+var _react = __webpack_require__(13);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -515,7 +566,7 @@ var _reactDom = __webpack_require__(33);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _Header = __webpack_require__(100);
+var _Header = __webpack_require__(101);
 
 var _Header2 = _interopRequireDefault(_Header);
 
@@ -523,15 +574,19 @@ var _Filter = __webpack_require__(99);
 
 var _Filter2 = _interopRequireDefault(_Filter);
 
-var _Listings = __webpack_require__(101);
+var _Listings = __webpack_require__(102);
 
 var _Listings2 = _interopRequireDefault(_Listings);
+
+var _Footer = __webpack_require__(100);
+
+var _Footer2 = _interopRequireDefault(_Footer);
 
 var _fontawesomeSvgCore = __webpack_require__(56);
 
 var _freeSolidSvgIcons = __webpack_require__(98);
 
-var _listingData = __webpack_require__(102);
+var _listingData = __webpack_require__(103);
 
 var _listingData2 = _interopRequireDefault(_listingData);
 
@@ -678,7 +733,8 @@ var App = function (_Component) {
                     'section',
                     { id: 'content-area' },
                     _react2.default.createElement(_Filter2.default, { change: this.change, globalState: this.state, populateAction: this.populateForms }),
-                    _react2.default.createElement(_Listings2.default, { listingData: this.state.filteredData, change: this.change })
+                    _react2.default.createElement(_Listings2.default, { listingData: this.state.filteredData, change: this.change }),
+                    _react2.default.createElement(_Footer2.default, null)
                 )
             );
         }
@@ -705,7 +761,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(14);
+var _react = __webpack_require__(13);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -933,4 +989,4 @@ exports.default = Filter;
 
 /***/ })
 
-},[105]);
+},[106]);

@@ -1,4 +1,8 @@
 header{
+    position: fixed;
+    top:0;
+    z-index: 3;
+    width:100%;
     background: $darkpurple;
     padding: 28px 30px;
     font-size: 19px;

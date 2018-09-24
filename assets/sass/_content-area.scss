@@ -1,8 +1,10 @@
 #filter{
+    margin-top:80px;
     background: $grey;
     width: 450px;
     display: block;
     float: left;
+    padding-bottom: 40px;
     h4{
         color:rgb(65, 65, 65);
         font-weight: bolder;
@@ -14,6 +16,7 @@
     .filter-container{
         padding: 20px;
         padding-right: 30px;
+        padding-bottom: 90px;
         max-width: 400px;
     }
     select{
@@ -78,6 +81,8 @@ input[type='checkbox']{
 
 
 #listings{
+    margin-top:80px;
+    min-width: 0%;
     display: block;
     width: 72%;
     float: left;
@@ -126,7 +131,7 @@ input[type='checkbox']{
 
 
 #listings-results{
-    width: 90%;
+    width: 1000px;
     .listing-grid{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -134,6 +139,16 @@ input[type='checkbox']{
         margin-top: 30px;
         padding-left: 30px;
         padding-right: 150px;       
+    }
+    @media only screen and (max-width: 1600px)  {
+        .listing-grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr ;
+            grid-gap: 3rem;
+            margin-top: 30px;
+            padding-left: 30px;
+            padding-right: 150px;       
+        }
     }
     .listing{
         -webkit-box-shadow: 4px 7px 28px 7px rgba(0, 0, 0, 0.185);
@@ -315,4 +330,48 @@ input[type='checkbox']{
 }
 .inline{
     display: inline-block;
+}
+
+#footer{
+    clear:both;
+    background-color: $darkpurple;
+    height: 400px;
+    .footerGrid{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        .footerPicture{
+            position: relative;
+            height: 400px;
+            .phone{
+                position: absolute;
+                bottom:0;
+                right: 40px;
+                width: 300px;
+                height: auto;
+                background-image: url(https://images.unsplash.com/photo-1537691321166-d766dfd693d9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ee03913ae00f830eb1c0accd44bb2550&auto=format&fit=crop&w=634&q=80);
+                z-index: 1;
+
+            }            
+        p{       
+            position: absolute;
+            color:rgb(0, 183, 255);
+            bottom:130px;
+            right: 132px;
+            z-index: 2;   
+            font-size: 1.5rem;
+            font-weight: 800;  
+        }            
+            
+        }
+        .footerSocialMedia{
+            height: 400px;
+            color:white;
+
+        }
+        .footerLinks{
+            height: 400px;
+
+        }
+    }
+    
 }

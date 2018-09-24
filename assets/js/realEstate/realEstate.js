@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Header from './Header.js';
 import Filter from './Filter.js';
 import Listings from './Listings.js';
+import Footer from './Footer.js';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faList, faTh, faChartArea, faCouch, faBed, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import listingData from './listingData/listingData.js';
@@ -129,6 +130,7 @@ class App extends Component {
                 <section id='content-area'>
                     <Filter change={this.change} globalState={this.state} populateAction={this.populateForms}/>
                     <Listings listingData={this.state.filteredData} change={this.change} />
+                    <Footer />
 
                 </section>
             </div>

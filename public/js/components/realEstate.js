@@ -734,7 +734,7 @@ var Listings = function (_Component) {
                 _react2.default.createElement(
                     'section',
                     { id: 'search-area' },
-                    _react2.default.createElement('input', { type: 'text', name: 'search', placeholder: 'Search' })
+                    _react2.default.createElement('input', { type: 'text', name: 'search', placeholder: 'Search', onClick: this.props.change })
                 ),
                 _react2.default.createElement(
                     'section',
@@ -999,7 +999,8 @@ var App = function (_Component) {
             swimming_pool: false,
             filteredData: _listingData2.default,
             populateFormsData: '',
-            sortby: 'price_dsc'
+            sortby: 'price_dsc',
+            search: ''
         }, _this.change = _this.change.bind(_this);
         _this.filteredData = _this.filteredData.bind(_this);
         _this.populateForms = _this.populateForms.bind(_this);
@@ -1049,25 +1050,36 @@ var App = function (_Component) {
             this.setState({
                 filteredData: newData
             });
+            if (this.state.search !== '') {
+                newData = newData.filter(function (item) {
+                    var city = item.city.toLowerCase();
+                    var searchText = _this3.state.search.toLowerCase();
+                    var n = city.match(searchText);
+
+                    if (n != 'null') {
+                        return true;
+                    }
+                });
+            }
         }
     }, {
         key: 'populateForms',
         value: function populateForms() {
-            //location
+
             var locations = this.state.listingData.map(function (item) {
                 return item.location;
             });
             locations = new Set(locations);
             locations = [].concat(_toConsumableArray(locations));
             locations = locations.sort();
-            //houseType
+
             var houseTypes = this.state.listingData.map(function (item) {
                 return item.houseType;
             });
             houseTypes = new Set(houseTypes);
             houseTypes = [].concat(_toConsumableArray(houseTypes));
             houseTypes = houseTypes.sort();
-            //bedrooms
+
             var bedrooms = this.state.listingData.map(function (item) {
                 return item.bedrooms;
             });

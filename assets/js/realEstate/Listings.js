@@ -67,7 +67,7 @@ export default class Listings extends Component {
             <section id='listings'>
 
                 <section id='search-area'>
-                    <input type='text' name='search' placeholder='Search' />
+                    <input type='text' name='search' placeholder='Search' onClick={this.props.change} />
 
                 </section>
                 <section id='sort-by'>

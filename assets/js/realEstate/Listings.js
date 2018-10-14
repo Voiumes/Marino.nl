@@ -67,7 +67,7 @@ export default class Listings extends Component {
             <section id='listings'>
 
                 <section id='search-area'>
-                    <input type='text' name='search' placeholder='Search' onClick={this.props.change} />
+                    <input type='text' name='search' placeholder='Search by Name' onChange={this.props.change} />
 
                 </section>
                 <section id='sort-by'>
@@ -102,18 +102,6 @@ export default class Listings extends Component {
                         </li>
                         <li className='active'>
                             1
-                        </li>
-                        <li>
-                            2
-                        </li>
-                        <li>
-                            3
-                        </li>
-                        <li>
-                            4
-                        </li>
-                        <li>
-                            5
                         </li>
                         <li className='next'>
                             next

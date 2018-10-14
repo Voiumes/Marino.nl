@@ -734,7 +734,7 @@ var Listings = function (_Component) {
                 _react2.default.createElement(
                     'section',
                     { id: 'search-area' },
-                    _react2.default.createElement('input', { type: 'text', name: 'search', placeholder: 'Search', onClick: this.props.change })
+                    _react2.default.createElement('input', { type: 'text', name: 'search', placeholder: 'Search by Name', onChange: this.props.change })
                 ),
                 _react2.default.createElement(
                     'section',
@@ -788,26 +788,6 @@ var Listings = function (_Component) {
                             'li',
                             { className: 'active' },
                             '1'
-                        ),
-                        _react2.default.createElement(
-                            'li',
-                            null,
-                            '2'
-                        ),
-                        _react2.default.createElement(
-                            'li',
-                            null,
-                            '3'
-                        ),
-                        _react2.default.createElement(
-                            'li',
-                            null,
-                            '4'
-                        ),
-                        _react2.default.createElement(
-                            'li',
-                            null,
-                            '5'
                         ),
                         _react2.default.createElement(
                             'li',
@@ -1047,24 +1027,28 @@ var App = function (_Component) {
                     return b.price - a.price;
                 });
             }
-            this.setState({
-                filteredData: newData
-            });
-            if (this.state.search !== '') {
-                newData = newData.filter(function (item) {
-                    var city = item.city.toLowerCase();
-                    var searchText = _this3.state.search.toLowerCase();
-                    var n = city.match(searchText);
 
-                    if (n != 'null') {
+            if (this.state.search != '') {
+                newData = newData.filter(function (item) {
+                    var name = item.name.toLowerCase();
+                    // console.log(name);
+                    var search = _this3.state.search.toLowerCase();
+                    // console.log(search);
+                    var matched = name.match(search);
+                    console.log(matched);
+                    if (matched != null) {
                         return true;
                     }
                 });
             }
+            this.setState({
+                filteredData: newData
+            });
         }
     }, {
         key: 'populateForms',
         value: function populateForms() {
+            var _this4 = this;
 
             var locations = this.state.listingData.map(function (item) {
                 return item.location;
@@ -1093,9 +1077,8 @@ var App = function (_Component) {
                     bedrooms: bedrooms
                 }
             }, function () {
-                console.log();
-            } //this.state)
-            );
+                console.log(_this4.state);
+            });
         }
     }, {
         key: 'componentWillMount',

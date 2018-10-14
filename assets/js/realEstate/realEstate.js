@@ -76,20 +76,23 @@ class App extends Component {
                 return b.price - a.price
             })
         }
-        this.setState({
-            filteredData: newData
-        })
-        if(this.state.search !== ''){
-            newData = newData.filter((item)=>{
-                var city = item.city.toLowerCase();
-                var searchText = this.state.search.toLowerCase();
-                var n = city.match(searchText)
 
-                if(n != 'null'){
-                    return true
+        if(this.state.search != ''){
+          newData = newData.filter((item)=>{
+                var name =item.name.toLowerCase();
+                // console.log(name);
+                var search = this.state.search.toLowerCase();
+                // console.log(search);
+                var matched = name.match(search);
+                console.log(matched);
+                if(matched != null){
+                    return true;
                 }
             })
         }
+        this.setState({
+            filteredData: newData
+        })
 
     }
 
@@ -122,8 +125,8 @@ class App extends Component {
                 bedrooms
             }   
         }, ()=>{
-            console.log(//this.state)
-            )
+            console.log(this.state)
+            
         })
     }
    componentWillMount(){

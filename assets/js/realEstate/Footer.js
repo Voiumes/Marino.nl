@@ -35,7 +35,7 @@ export default class Header extends Component {
                     </div>
                     <div className='footerLinksGrid'>
                         <div className='forTenants'>
-                            <h4>For Tenants</h4>
+                            <h4>For Tenants </h4>
                             <ul>
                                 <li>
                                     <a href="#">About Marino</a>

@@ -734,7 +734,7 @@ var Listings = function (_Component) {
                 _react2.default.createElement(
                     'section',
                     { id: 'search-area' },
-                    _react2.default.createElement('input', { type: 'text', name: 'search', placeholder: 'Search' })
+                    _react2.default.createElement('input', { type: 'text', name: 'search', placeholder: 'Search by Name', onChange: this.props.change })
                 ),
                 _react2.default.createElement(
                     'section',
@@ -788,26 +788,6 @@ var Listings = function (_Component) {
                             'li',
                             { className: 'active' },
                             '1'
-                        ),
-                        _react2.default.createElement(
-                            'li',
-                            null,
-                            '2'
-                        ),
-                        _react2.default.createElement(
-                            'li',
-                            null,
-                            '3'
-                        ),
-                        _react2.default.createElement(
-                            'li',
-                            null,
-                            '4'
-                        ),
-                        _react2.default.createElement(
-                            'li',
-                            null,
-                            '5'
                         ),
                         _react2.default.createElement(
                             'li',
@@ -999,7 +979,8 @@ var App = function (_Component) {
             swimming_pool: false,
             filteredData: _listingData2.default,
             populateFormsData: '',
-            sortby: 'price_dsc'
+            sortby: 'price_dsc',
+            search: ''
         }, _this.change = _this.change.bind(_this);
         _this.filteredData = _this.filteredData.bind(_this);
         _this.populateForms = _this.populateForms.bind(_this);
@@ -1046,6 +1027,20 @@ var App = function (_Component) {
                     return b.price - a.price;
                 });
             }
+
+            if (this.state.search != '') {
+                newData = newData.filter(function (item) {
+                    var name = item.name.toLowerCase();
+                    // console.log(name);
+                    var search = _this3.state.search.toLowerCase();
+                    // console.log(search);
+                    var matched = name.match(search);
+                    console.log(matched);
+                    if (matched != null) {
+                        return true;
+                    }
+                });
+            }
             this.setState({
                 filteredData: newData
             });
@@ -1053,21 +1048,22 @@ var App = function (_Component) {
     }, {
         key: 'populateForms',
         value: function populateForms() {
-            //location
+            var _this4 = this;
+
             var locations = this.state.listingData.map(function (item) {
                 return item.location;
             });
             locations = new Set(locations);
             locations = [].concat(_toConsumableArray(locations));
             locations = locations.sort();
-            //houseType
+
             var houseTypes = this.state.listingData.map(function (item) {
                 return item.houseType;
             });
             houseTypes = new Set(houseTypes);
             houseTypes = [].concat(_toConsumableArray(houseTypes));
             houseTypes = houseTypes.sort();
-            //bedrooms
+
             var bedrooms = this.state.listingData.map(function (item) {
                 return item.bedrooms;
             });
@@ -1081,9 +1077,8 @@ var App = function (_Component) {
                     bedrooms: bedrooms
                 }
             }, function () {
-                console.log();
-            } //this.state)
-            );
+                console.log(_this4.state);
+            });
         }
     }, {
         key: 'componentWillMount',

@@ -30,7 +30,8 @@ class App extends Component {
             swimming_pool:false,
             filteredData: listingData,
             populateFormsData:'',
-            sortby:'price_dsc'
+            sortby:'price_dsc',
+            search:''
         },
             this.change = this.change.bind(this)
             this.filteredData = this.filteredData.bind(this)
@@ -75,6 +76,20 @@ class App extends Component {
                 return b.price - a.price
             })
         }
+
+        if(this.state.search != ''){
+          newData = newData.filter((item)=>{
+                var name =item.name.toLowerCase();
+                // console.log(name);
+                var search = this.state.search.toLowerCase();
+                // console.log(search);
+                var matched = name.match(search);
+                console.log(matched);
+                if(matched != null){
+                    return true;
+                }
+            })
+        }
         this.setState({
             filteredData: newData
         })
@@ -82,21 +97,21 @@ class App extends Component {
     }
 
     populateForms(){
-        //location
+
         let locations = this.state.listingData.map((item)=>{
             return item.location
         })
         locations = new Set(locations)
         locations = [...locations]
         locations = locations.sort()
-        //houseType
+
         let houseTypes = this.state.listingData.map((item)=>{
             return item.houseType
         })
         houseTypes = new Set(houseTypes)
         houseTypes =[...houseTypes]
         houseTypes = houseTypes.sort()
-        //bedrooms
+
         let bedrooms = this.state.listingData.map((item)=>{
             return item.bedrooms
         })
@@ -110,8 +125,8 @@ class App extends Component {
                 bedrooms
             }   
         }, ()=>{
-            console.log(//this.state)
-            )
+            console.log(this.state)
+            
         })
     }
    componentWillMount(){

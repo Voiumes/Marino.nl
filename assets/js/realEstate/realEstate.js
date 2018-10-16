@@ -7,7 +7,7 @@ import Footer from './Footer.js';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faList, faTh, faChartArea, faCouch, faBed, faMapMarkerAlt, faAppleAlt, faPlay } from '@fortawesome/free-solid-svg-icons';
 import listingData from './listingData/listingData.js';
-library.add(faTh, faChartArea, faList, faCouch, faBed, faMapMarkerAlt, faAppleAlt, faPlay  )
+library.add(faTh, faChartArea, faList, faCouch, faBed, faMapMarkerAlt, faAppleAlt, faPlay)
 
 
 class App extends Component {
@@ -59,7 +59,6 @@ class App extends Component {
                 return item.location == this.state.location
             })
             
-
         }
         if(this.state.houseType != 'All'){
             newData = newData.filter((item)=>{
@@ -80,16 +79,14 @@ class App extends Component {
         if(this.state.search != ''){
           newData = newData.filter((item)=>{
                 var name =item.name.toLowerCase();
-                // console.log(name);
                 var search = this.state.search.toLowerCase();
-                // console.log(search);
                 var matched = name.match(search);
-                console.log(matched);
                 if(matched != null){
                     return true;
                 }
             })
         }
+
         this.setState({
             filteredData: newData
         })
@@ -134,8 +131,6 @@ class App extends Component {
             return a.price - b.price
        })
    }
-
-
 
 
     render() {

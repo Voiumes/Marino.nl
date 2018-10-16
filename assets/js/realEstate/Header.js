@@ -15,7 +15,6 @@ export default class Header extends Component {
                 <div className='container'>
                     <div className='logo'>Logo</div>
                     <nav className='navbar'>
-
                         <div>
                             <ul>
                                 <li>

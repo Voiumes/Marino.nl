@@ -374,7 +374,7 @@ var Header = function (_Component) {
                             _react2.default.createElement(
                                 'h4',
                                 null,
-                                'For Tenants'
+                                'For Tenants '
                             ),
                             _react2.default.createElement(
                                 'ul',
